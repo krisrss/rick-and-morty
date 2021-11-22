@@ -1,0 +1,18 @@
+.centred-box {
+    margin: 0.1em auto 3em auto;
+    width: 14.5em;
+    font-size: 1.3em;
+}
+
+.border-main{
+    display: inline-block;
+}
+
+.pagination{
+    border: 1px solid grey;
+    border-radius: 0.2em;
+}
+
+.pagination .cursor-point{
+    cursor: pointer;
+}

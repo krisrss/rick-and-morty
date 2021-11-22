@@ -1,0 +1,69 @@
+<div *ngIf="charactersListById !== undefined" class="conditional-space"></div>
+
+<app-characters-filter *ngIf="charactersListById === undefined" (userFilters)="applyFilters($event)">
+</app-characters-filter>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-3 card-wrapper" *ngFor="let character of charactersList.results">
+
+            <img class="main-image" src="{{character.image}}" alt="{{character.name}}">
+
+            <div class="overlayed-name">
+                <span class="name-text-wrapper">
+                    {{character.name}}
+                    <div class="gender-text">Gender: {{character.gender}}</div>
+                </span>
+            </div>
+
+            <div class="details-wrapper">
+                <div class="inner-details-wrapper">
+                    <div>
+                    </div>
+
+                    <div>
+                        <div class="card-title">
+                            Origin
+                        </div>
+
+                        <div [class.disable-link]="character.origin.name == 'unknown'"  class="card-link" routerLink="/locations/{{extractedId(character.origin.url)}}">
+                            {{character.origin.name}}
+                        </div>
+
+                    </div>
+
+                    <div class="title-wrapper">
+                        <div class="card-title">
+                            Current location
+                        </div>
+
+                        <div [class.disable-link]="character.location.name == 'unknown'"  class="card-link" routerLink="/locations/{{extractedId(character.location.url)}}">
+                            {{character.location.name}}
+                        </div>
+
+                    </div>
+
+                    <div class="episodes-wrapper">
+                        <span class="card-title spaced">
+                            Episode count
+                        </span>
+
+                        <span class="card-link-episodes"
+                            [state]="{ charName: character.name, charDimension: character.origin.name}"
+                            routerLink="/episodes/{{extractMultipleIds(character.episode.length,character.episode)}}">
+                            {{character.episode.length}} episode
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<app-pagination *ngIf="charactersList && charactersListById === undefined" (onPaginate)="paginateApp($event)"
+    [paginationData]="charactersList.info">
+</app-pagination>

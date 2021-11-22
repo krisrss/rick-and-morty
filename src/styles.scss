@@ -1,0 +1,78 @@
+body {
+    overflow-y: overlay;
+}
+
+.filter-wrapper {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.input-wrapper {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.input-wrapper input {
+    height: 2.5em;
+    width: 20em;
+}
+
+.dropdown-wrapper {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.dropdown-wrapper select {
+    height: 2.5em;
+    width: 10em;
+}
+
+.filter-button {
+    height: 2.5em;
+    border: 1px solid black;
+    padding: 0 1em;
+    text-decoration: none;
+    color: white;
+    background-color: #42b4ca;
+    margin-left: 1em;
+}
+
+.filter-button:hover {
+    background-color: #2f96aa;
+    cursor: pointer;
+}
+
+.list-card-content {
+    border: 1px solid black;
+    margin-left: -0.5em;
+    margin: 1.5em 0;
+    border-radius: 0.3em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.list-card-title {
+    border: 1px solid black;
+    font-size: 1.1em;
+    padding: 0 0.9em;
+    background-color: white;
+    border-radius: 0.2em;
+    padding: 0 0.8em;
+    margin-left: 0.3em;
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+
+
+.titles-list {
+    text-align: center;
+    margin-top: -1em;
+    margin-bottom: 0.4em;
+}
+
+.title-text{
+    font-weight: 500;
+}
+
+.conditional-space {
+    height: 3em;
+}

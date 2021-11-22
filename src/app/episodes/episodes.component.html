@@ -1,0 +1,40 @@
+<app-episodes-filter *ngIf="episodesListById === undefined" (episodeFilter)="applyFilters($event)">
+</app-episodes-filter>
+
+<div *ngIf="episodesListById !== undefined" class="conditional-space"></div>
+
+<h3 class="char-name-title" *ngIf="currentCharName && currentCharDim">Episodes list with {{currentCharName}} from {{currentCharDim}} dimension</h3>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10 list-card-content" *ngFor="let episode of episodesList.results">
+
+            <div class="titles-list">
+                <span class="list-card-title">Title:
+                    <span class="title-text">{{episode.name}}</span>
+                </span>
+                <span class="list-card-title">Air date:
+                    <span class="title-text">{{episode.air_date}}</span>
+                </span>
+                <span class="list-card-title">Episode:
+                    <span class="title-text">{{episode.episode}}</span>
+                </span>
+                <span class="list-card-title">Characters appearing:
+                    <span class="title-text">{{episode.characters.length}}</span>
+                </span>
+            </div>
+
+            <div>
+                <app-residents-list *ngIf="episodesList" [data]="episode.characters"></app-residents-list>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<app-pagination *ngIf="episodesList && episodesListById === undefined" (onPaginate)="paginateApp($event)"
+    [paginationData]="episodesList.info">
+</app-pagination>

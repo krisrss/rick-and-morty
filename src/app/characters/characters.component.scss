@@ -1,0 +1,106 @@
+.card-wrapper {
+    position: relative;
+    margin-bottom: 3em;
+}
+
+.main-image {
+    width: 16.3em;
+    border: 1px solid black;
+}
+
+.name-text-wrapper {
+    width: 14em;
+}
+.overlayed-name {
+    font-size: 1.1em;
+    background-color: black;
+    text-align: center;
+    width: 14.82em;
+    position: absolute;
+    top: 11.32em;
+    height: 3.5em;
+    background: rgba(12, 5, 5, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-wrapper {
+    border: 1px solid black;
+    width: 16.3em;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+}
+
+.inner-details-wrapper {
+    width: 15.5em;
+    margin: 0 auto;
+    font-size: 0.9em;
+    word-wrap: break-word;
+}
+
+.gender-text {
+    font-size: 0.75em;
+}
+
+.card-title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.card-link {
+    border: 1px solid black;
+    background-color: #42b4ca;
+    padding: 0.3em;
+    border-radius: 0.6em;
+    margin-top: -0.5em;
+}
+
+.card-link:hover {
+    background-color: #2f96aa;
+    cursor: pointer;
+}
+
+.card-link-episodes:hover {
+    background-color: #2f96aa;
+    cursor: pointer;
+}
+
+.card-link-episodes {
+    border: 1px solid black;
+    background-color: #42b4ca;
+    padding: 0.3em;
+    border-radius: 0.6em;
+}
+
+.card-link {
+    color: white;
+    text-decoration: none;
+}
+
+.card-link-episodes {
+    color: white;
+    text-decoration: none;
+}
+
+.episodes-wrapper {
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.title-wrapper {
+    margin-top: 0.8em;
+}
+
+.spaced {
+    margin-right: 0.4em;
+}
+
+.disable-link {
+    pointer-events: none;
+    background-color: rgb(241, 234, 234);
+    color: black;
+}

@@ -1,0 +1,5 @@
+<div class="resident-name-list" *ngIf="concatNumbers.length !== 0">
+    <span routerLink="/characters/{{character.id}}" class="resident-name" *ngFor="let character of charactersList">
+        {{character.name}}
+    </span>
+</div>

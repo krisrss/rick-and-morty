@@ -1,0 +1,33 @@
+<div *ngIf="locationsListById !== undefined" class="conditional-space"></div>
+
+<app-locations-filter *ngIf="locationsListById === undefined" (locFilters)="applyFilters($event)">
+</app-locations-filter>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10 list-card-content" *ngFor="let location of locationsList.results">
+
+            <div class="titles-list">
+                <span class="list-card-title">
+                    Location name:
+                    <span class="title-text">{{location.name}}</span>
+                </span>
+                <span class="list-card-title">
+                    Dimension:
+                    <span class="title-text">{{location.dimension}}</span>
+                </span>
+                <span class="list-card-title">
+                    Residents:
+                    <span class="title-text">{{location.residents.length}}</span>
+                </span>
+            </div>
+            <div>
+                <app-residents-list *ngIf="locationsList" [data]="location.residents"></app-residents-list>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-pagination *ngIf="locationsList && locationsListById === undefined" (onPaginate)="paginateApp($event)"
+    [paginationData]="locationsList.info">
+</app-pagination>

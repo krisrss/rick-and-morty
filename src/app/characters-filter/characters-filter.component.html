@@ -1,0 +1,17 @@
+<div class="filter-wrapper">
+    
+    <div class="input-wrapper">
+        <input placeholder="Enter name..." [(ngModel)]="userInput"><br>
+    </div>
+
+    <div class="dropdown-wrapper">
+        <select name="dropdownList" id="dropdownList" [(ngModel)]="dropdownSelect">
+            <option value="">All</option>
+            <option *ngFor="let item of gendersList">
+                {{item}}
+            </option>
+        </select>
+    </div>
+
+    <button class="filter-button" (click)="onFilterSubmit()">Filter</button>
+</div>
